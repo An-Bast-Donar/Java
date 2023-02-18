@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.function.IntUnaryOperator;
+
 public class HolaMundo {
   public static void main(String[] args) {
     System.out.println("Hola Mundo");
@@ -93,5 +96,74 @@ public class HolaMundo {
     } else {
       System.out.println("No puede conducir un vehículo.");
     }
+
+    // Sentencia switch
+    int dia = 4;
+    String nombreDia;
+    switch (dia) {
+      case 1:
+        nombreDia = "Lunes";
+        break;
+      case 2:
+        nombreDia = "Martes";
+        break;
+      case 3:
+        nombreDia = "Miércoles";
+        break;
+      case 4:
+        nombreDia = "Jueves";
+        break;
+      case 5:
+        nombreDia = "Viernes";
+        break;
+      case 6:
+        nombreDia = "Sábado";
+        break;
+      case 7:
+        nombreDia = "Domingo";
+        break;
+      default:
+        nombreDia = "Día inválido";
+        break;
+    }
+    System.out.println(nombreDia);
+
+    // Sentencia while
+    int a = 0;
+    while (a < 10) {
+      System.out.println(a);
+      a++;
+    }
+
+    // Sentencia do while
+    int b = 0;
+    do {
+      System.out.println(b);
+      b++;
+    } while (b < 10);
+
+    // Sentencia for
+    for (int i = 0; i < 10; i++) {
+      System.out.println(i);
+    }
+
+    // Sentencia for anidada
+    for (int i = 1; i <= 3; i++) {
+      for (int j = 1; j <= 3; j++) {
+        System.out.println("i = " + i + ", j = " + j);
+      }
+    }
+
+    // Funcion lambda
+    int[] numeros = { 1, 2, 3, 4, 5 };
+    int factor = 2;
+    // definimos una función lambda para multiplicar los números por el factor
+    IntUnaryOperator funcion = (int numerodenumeros) -> numerodenumeros * factor;
+    // aplicamos la función a cada número del arreglo utilizando la función map de
+    // Arrays
+    int[] resultados = Arrays.stream(numeros).map(funcion).toArray();
+    // imprimimos el resultado
+    System.out.println(Arrays.toString(resultados));
+
   }
 }
